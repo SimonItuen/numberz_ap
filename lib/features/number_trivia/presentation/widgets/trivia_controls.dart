@@ -13,7 +13,7 @@ class TriviaControls extends StatefulWidget {
 }
 
 class _TriviaControlsState extends State<TriviaControls> {
-  late String inputStr;
+   String inputStr = '';
   final controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -56,6 +56,6 @@ class _TriviaControlsState extends State<TriviaControls> {
   
   void dispatchRandom(){
     controller.clear();
-    BlocProvider.of<NumberTriviaBloc>(context).add(GetTriviaForConcreteNumber(inputStr));
+    BlocProvider.of<NumberTriviaBloc>(context).add(GetTriviaForRandomNumber());
   }
 }
